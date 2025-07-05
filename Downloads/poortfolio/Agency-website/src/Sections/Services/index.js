@@ -224,7 +224,7 @@ const Services = () => {
           ))}
         </CardsRow>
       </CardsContainer>
-      <ViewAllButton to="/full-services">View Full Services</ViewAllButton>
+      <ViewAllButton to="/full-services#testimonials">View Full Services</ViewAllButton>
     </ServiceSection>
   );
 };

@@ -109,7 +109,7 @@ const projects = [
     name: "State Guesser",
     text: "State Guesser is an interactive web game where users try to guess the correct Indian state (or U.S. state) based on hints, outlines, facts, or a blurred map image. It's a fun and educational way to test your geography knowledge, sharpen memory, and learn interesting trivia about different states. Perfect for students, quiz lovers, and anyone who enjoys a challenge!",
     image: "stateguesser",
-    link: "https://state-guesser.vercel.app/"
+    link: "https://game-rq20.onrender.com/"
   },
   {
     name: "Spicy Huts",
@@ -118,16 +118,16 @@ const projects = [
     link: "https://spicy-huts.vercel.app/"
   },
   {
-    name: "Instagram Clone",
+    name: "InstaDM Automator",
     text: "Instagram Clone is a full-stack social media web application inspired by Instagram. It allows users to sign up, upload and share photos, like and comment on posts, follow other users, and view a real-time feed. Designed with a modern UI, responsive layout, and smooth user experience, this project showcases key concepts like authentication, database management, REST APIs, and image handling — all packed into a real-world app structure.",
     image: "insta",
     link: "https://drive.google.com/file/d/1BUYKktNlYvQKToMo2vnaJKCEtz6ve7J0/view"
   },
   {
-    name: "Mobile App Design",
-    text: "Cross-platform mobile application with intuitive UI/UX design, push notifications, and offline functionality. Optimized for both iOS and Android platforms.",
+    name: "Business Website",
+    text: "Our agency specializes in crafting high-performance websites and digital solutions tailored to meet your business goals. From stunning designs to seamless user experiences, we turn your ideas into digital reality.",
     image: "Website Image-1",
-    link: "https://mobile-app-design.com"
+    link: "https://sypher-ten.vercel.app/"
   }
 ];
 
