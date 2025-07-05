@@ -31,6 +31,7 @@ const TestimonialsSection = styled.section`
   position: relative;
   padding: 3rem 0 2rem 0;
   overflow: hidden;
+  scroll-margin-top: 100px;
   
   &::before {
     content: '';
@@ -252,6 +253,7 @@ const PackagesSection = styled.section`
   position: relative;
   padding: 3rem 0 2rem 0;
   margin-top: 0;
+  scroll-margin-top: 100px;
 `;
 
 // --- Data ---
@@ -359,6 +361,21 @@ const FullServices = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  useEffect(() => {
+    if (location.hash === "#packages") {
+      const el = document.getElementById("packages");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    if (location.hash === "#testimonials") {
+      const el = document.getElementById("testimonials");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   const handleGetStartedClick = (packageType) => {
     // Navigate to home page and scroll to contact section with package type
     navigate(`/?package=${encodeURIComponent(packageType)}#contact`);
@@ -377,7 +394,7 @@ const FullServices = () => {
 
   return (
     <PageWrapper>
-      <TestimonialsSection>
+      <TestimonialsSection id="testimonials">
         <TestimonialsTitle>What Clients Say</TestimonialsTitle>
         <TestimonialsContainer>
           <TestimonialsContent>
@@ -394,7 +411,7 @@ const FullServices = () => {
           </AvatarsContainer>
         </TestimonialsContainer>
       </TestimonialsSection>
-      <PackagesSection>
+      <PackagesSection id="packages">
         <SectionTitle>Our Packages</SectionTitle>
         <PackagesGrid>
           {packages.map((p, i) => (

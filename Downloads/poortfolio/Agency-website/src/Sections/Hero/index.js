@@ -1,6 +1,8 @@
 // This is HeroSection component, Main top section of website
 
 import styled, { keyframes } from "styled-components";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import pinkBlob from "../../assets/blobPink.png";
 import purpleBlob from "../../assets/blob purple.png";
@@ -142,7 +144,9 @@ const Title = styled.h1`
 
 const SubText = styled.h5`
   font-size: calc(0.5rem + 0.5vw);
-  color: var(--nav2);
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 `;
 
 const CTA = styled.button`
@@ -172,7 +176,45 @@ const CTA = styled.button`
   }
 `;
 
+const ViewAllButton = styled.button`
+  background-color: var(--white);
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: calc(0.5rem + 0.5vw);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+
+  img {
+    width: 1.5rem;
+  }
+  @media only screen and (max-width: 48em) {
+    padding: 0.2rem 1rem;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 const HeroSection = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#testimonials") {
+      const el = document.getElementById("testimonials");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   return (
     <HomeSection id="home">
       <Blobs>
@@ -191,16 +233,13 @@ const HeroSection = () => {
         <Lb id="leftBlock">
           <Topic>
             <Circle />
-            <span>We Build Web</span>
+            <span>We Build Brands</span>
           </Topic>
           <Title>Transforming your digital presence</Title>
           <SubText>
             we help fast growing companies build award winning websites
           </SubText>
-          <CTA>
-            Get in touch &nbsp;
-            <img src={arrow} alt="cta" width="100" height="100" />
-          </CTA>
+          <ViewAllButton to="/full-services#packages">View Full Services</ViewAllButton>
         </Lb>
 
         <MobileSvg
